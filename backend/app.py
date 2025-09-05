@@ -10,9 +10,11 @@ import calendar
 import re
 import difflib
 from urllib.parse import unquote_plus
+import os
 
 app = Flask(__name__)
 CORS(app, resources={r"/api/*": {"origins": "*"}})
+app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY')
 
 @app.errorhandler(404)
 def not_found(e):
