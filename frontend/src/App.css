@@ -1,5 +1,3 @@
-/* Optionally import fonts here if not adding link in index.html */
-/* @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&family=Inter:wght@400;500;600;700&display=swap'); */
 
 :root{
   --bg-cream:#f7f0e0; --bg-cream-2:#f6efdf; --aqua:#06d7d9;
@@ -27,7 +25,6 @@ body{
 .header-banner{height:44px;background:
   radial-gradient(16px 16px at 10% 55%, rgba(255,255,255,.25) 40%, transparent 41%) repeat-x,
   linear-gradient(180deg,transparent 0, transparent 30%, rgba(0,0,0,.05) 31%, transparent 32%),
-  url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="620" height="64" viewBox="0 0 620 64"><g fill="%23ffffff" opacity=".25"><rect x="20" y="10" width="40" height="22" rx="2"/><rect x="120" y="10" width="36" height="20" rx="2"/><rect x="220" y="14" width="28" height="18" rx="2"/><rect x="300" y="8" width="44" height="22" rx="2"/><rect x="380" y="12" width="34" height="18" rx="2"/><rect x="460" y="10" width="36" height="20" rx="2"/><rect x="540" y="12" width="28" height="18" rx="2"/></g></svg>') center/auto 64px repeat-x;
 }
 
 /* Sections */

@@ -20,7 +20,7 @@ export default function SearchCompanies() {
   const [suggestions, setSuggestions] = useState([]);
   const [showSug, setShowSug] = useState(false);
 
-  const API_BASE = "http://localhost:5001";
+  const API_BASE = process.env.REACT_APP_API_URL || "";
 
   const fetchCompanies = async (q = query, p = 1) => {
     try {
