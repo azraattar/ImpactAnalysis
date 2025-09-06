@@ -1,12 +1,10 @@
-// src/App.js
 import { useEffect } from "react";
 import "./App.css";
 import SearchCompanies from "./SearchCompanies";
 
-import "./App.css";
-
-export default function App() {
+export default function HomePage() {
   useEffect(() => {
+    // This effect handles the active link highlighting on scroll
     const links = document.querySelectorAll(".nav-link");
     const sections = [...links]
       .map((a) => document.querySelector(a.getAttribute("href")))
@@ -14,9 +12,11 @@ export default function App() {
 
     const setActive = () => {
       const y = window.scrollY + 120;
-      let active = links; // fix: use first element
+      let active = links[0]; // Default to the first link
       sections.forEach((s, i) => {
-        if (s.offsetTop <= y) active = links[i];
+        if (s.offsetTop <= y) {
+          active = links[i];
+        }
       });
       links.forEach((l) => l.classList.toggle("active", l === active));
     };
@@ -24,13 +24,17 @@ export default function App() {
     setActive();
     window.addEventListener("scroll", setActive);
 
+    // This effect handles the header shadow on scroll
     const header = document.querySelector(".site-header");
     const onScrollShadow = () => {
-      header.style.boxShadow =
-        window.scrollY > 6 ? "0 6px 14px rgba(0,0,0,.12)" : "none";
+      if (header) {
+        header.style.boxShadow =
+          window.scrollY > 6 ? "0 6px 14px rgba(0,0,0,.12)" : "none";
+      }
     };
     window.addEventListener("scroll", onScrollShadow);
 
+    // This effect handles smooth scrolling for CTA buttons
     document.querySelectorAll("[data-scroll]").forEach((b) =>
       b.addEventListener("click", () => {
         const t = document.querySelector(b.dataset.scroll);
@@ -54,7 +58,7 @@ export default function App() {
           </a>
           <nav className="nav">
             <a className="nav-link" href="#home">HOME</a>
-            <a className="nav-link" href="#dashboard">DASHBOARD</a>
+            <a className="nav-link" href="#search-companies">DASHBOARD</a>
             <a className="nav-link" href="#about">ABOUT</a>
             <a className="nav-link" href="#contact">CONTACT</a>
           </nav>
@@ -80,6 +84,8 @@ export default function App() {
           </div>
         </section>
 
+        <SearchCompanies />
+
         <section id="about" className="section principles">
           <div className="section-head">
             <h1 className="section-title">GUIDED BY PRINCIPLES</h1>
@@ -91,9 +97,6 @@ export default function App() {
             <article className="quote-card"><span className="quote-icon">״</span><p className="quote-text">SMALL CHOICES CAN LEAD TO BIG CHANGE.</p></article>
           </div>
         </section>
-
-        {/* Interactive search section */}
-        <SearchCompanies />
 
         <section className="section features">
           <div className="features-grid">
@@ -108,7 +111,6 @@ export default function App() {
               <h3 className="feature-title">VERIFIED DATA SOURCES</h3>
               <p className="feature-text">All data sourced from publicly available financial reports and verified through multiple channels.</p>
             </article>
-
             <article className="feature-card">
               <div className="feature-icon">
                 <svg width="32" height="32" viewBox="0 0 24 24" aria-hidden="true">
@@ -132,19 +134,10 @@ export default function App() {
           <p className="foot-note">© 2025 IMPACT INSIGHTS. ALL DATA SOURCED FROM PUBLIC FINANCIAL REPORTS. FOR EDUCATIONAL AND RESEARCH PURPOSES ONLY.</p>
           <div className="footer-badges">
             <a className="sq-badge blue" href="#" aria-label="LinkedIn">
-              <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
-                <rect width="24" height="24" rx="6" fill="#2b6cff"/>
-                <rect x="6" y="10" width="2.5" height="8" fill="#fff"/>
-                <rect x="6" y="6" width="2.5" height="2.5" fill="#fff"/>
-                <rect x="10" y="10" width="2.5" height="8" fill="#fff"/>
-                <rect x="13.5" y="13" width="2.5" height="5" fill="#fff"/>
-              </svg>
+              <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="6" fill="#2b6cff"/><rect x="6" y="10" width="2.5" height="8" fill="#fff"/><rect x="6" y="6" width="2.5" height="2.5" fill="#fff"/><rect x="10" y="10" width="2.5" height="8" fill="#fff"/><rect x="13.5" y="13" width="2.5" height="5" fill="#fff"/></svg>
             </a>
             <a className="sq-badge red" href="#" aria-label="GitLab">
-              <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
-                <rect width="24" height="24" rx="6" fill="#ff3d00"/>
-                <path d="M6 14l6 6 6-6-2-6-4 3-4-3-2 6z" fill="#fff"/>
-              </svg>
+              <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="6" fill="#ff3d00"/><path d="M6 14l6 6 6-6-2-6-4 3-4-3-2 6z" fill="#fff"/></svg>
             </a>
           </div>
           <ul className="legal">
