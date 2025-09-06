@@ -1,9 +1,7 @@
 // src/HomePage.js
-
 import { useEffect } from "react";
 import "./App.css";
 import SearchCompanies from "./SearchCompanies";
-
 
 export default function HomePage() {
   useEffect(() => {
@@ -12,7 +10,6 @@ export default function HomePage() {
     const sections = [...links]
       .map((a) => document.querySelector(a.getAttribute("href")))
       .filter(Boolean);
-
 
     const setActive = () => {
       const y = window.scrollY + 120;
@@ -25,10 +22,8 @@ export default function HomePage() {
       links.forEach((l) => l.classList.toggle("active", l === active));
     };
 
-
     setActive();
     window.addEventListener("scroll", setActive);
-
 
     // This effect handles the header shadow on scroll
     const header = document.querySelector(".site-header");
@@ -40,7 +35,6 @@ export default function HomePage() {
     };
     window.addEventListener("scroll", onScrollShadow);
 
-
     // This effect handles smooth scrolling for CTA buttons
     document.querySelectorAll("[data-scroll]").forEach((b) =>
       b.addEventListener("click", () => {
@@ -49,13 +43,11 @@ export default function HomePage() {
       })
     );
 
-
     return () => {
       window.removeEventListener("scroll", setActive);
       window.removeEventListener("scroll", onScrollShadow);
     };
   }, []);
-
 
   return (
     <>
@@ -75,7 +67,6 @@ export default function HomePage() {
         <div className="header-banner"></div>
       </header>
 
-
       <main>
         {/* Hero Section */}
         <section id="home" className="section hero">
@@ -94,7 +85,6 @@ export default function HomePage() {
             </button>
           </div>
         </section>
-
 
         {/* Guided by Principles Section */}
         <section id="principles" className="section principles">
@@ -125,10 +115,8 @@ export default function HomePage() {
           </div>
         </section>
 
-
         {/* Search Companies Section */}
         <SearchCompanies />
-
 
         {/* About Section */}
         <section id="about" className="section features">
@@ -170,7 +158,6 @@ export default function HomePage() {
         </section>
       </main>
 
-
       <footer id="contact" className="site-footer">
         <div className="footer-inner">
           <div className="footer-brand">
@@ -180,10 +167,10 @@ export default function HomePage() {
           <p className="foot-note">© 2025 IMPACT INSIGHTS. ALL DATA SOURCED FROM PUBLIC FINANCIAL REPORTS. FOR EDUCATIONAL AND RESEARCH PURPOSES ONLY.</p>
           <div className="footer-badges">
             {/* FIX: Replaced <a> with <button> for accessibility */}
-            <button className="sq-badge blue" aria-label="LinkedIn">
+            <button type="button" className="sq-badge blue" aria-label="LinkedIn">
               <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="6" fill="#2b6cff"/><rect x="6" y="10" width="2.5" height="8" fill="#fff"/><rect x="6" y="6" width="2.5" height="2.5" fill="#fff"/><rect x="10" y="10" width="2.5" height="8" fill="#fff"/><rect x="13.5" y="13" width="2.5" height="5" fill="#fff"/></svg>
             </button>
-            <button className="sq-badge red" aria-label="GitLab">
+            <button type="button" className="sq-badge red" aria-label="GitLab">
               <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="6" fill="#ff3d00"/><path d="M6 14l6 6 6-6-2-6-4 3-4-3-2 6z" fill="#fff"/></svg>
             </button>
           </div>
