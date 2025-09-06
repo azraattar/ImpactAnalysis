@@ -21,13 +21,11 @@ export default function CompanyDetail() {
     const fetchAllData = async () => {
       setLoading(true);
       try {
-        const detailsResponse = await fetch(`http://localhost:5001/api/company/${encodeURIComponent(companyName)}`);
-        if (!detailsResponse.ok) throw new Error("Company details not found");
+        const detailsResponse = await fetch(`/api/company/${encodeURIComponent(companyName)}`);        if (!detailsResponse.ok) throw new Error("Company details not found");
         const detailsData = await detailsResponse.json();
         setCompany(detailsData);
 
-        const financeResponse = await fetch(`http://localhost:5001/api/company/${encodeURIComponent(detailsData.name)}/finance`);
-        if (financeResponse.ok) {
+          const financeResponse = await fetch(`/api/company/${encodeURIComponent(detailsData.name)}/finance`);        if (financeResponse.ok) {
           const finData = await financeResponse.json();
           setFinanceData(finData);
         } else {
