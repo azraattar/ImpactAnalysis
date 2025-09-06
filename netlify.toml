@@ -1,23 +1,26 @@
-# This is the corrected configuration for netlify.toml
+# This is the final, corrected configuration for netlify.toml
 
 [build]
-  # Tell Netlify to change to the 'frontend' directory, then run the build.
-  command = "cd frontend && npm run build"
+  # Tell Netlify that all build-related activities happen here.
+  base = "frontend"
   
-  # The folder where your Flask app (Netlify Function) is located
+  # The command to build your React frontend (now runs from the 'base').
+  command = "npm run build"
+  
+  # The folder where your Flask app (Netlify Function) is located.
   functions = "api/"
   
-  # The folder that contains the built frontend to be published
+  # The folder that contains the built frontend to be published.
   publish = "frontend/build"
 
 [[redirects]]
-  # This rule proxies all API requests to your Flask function
+  # This rule proxies all API requests to your Flask function.
   from = "/api/*"
   to = "/.netlify/functions/app/:splat"
   status = 200
 
 [[redirects]]
-  # This rule handles client-side routing for your React app
+  # This rule handles client-side routing for your React app.
   from = "/*"
   to = "/index.html"
   status = 200
