@@ -1,4 +1,3 @@
-
 :root{
   --bg-cream:#f7f0e0; --bg-cream-2:#f6efdf; --aqua:#06d7d9;
   --ink:#111217; --muted:#60636b; --brand-blue:#2b6cff;
@@ -9,10 +8,9 @@
 body{
   font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
   color:var(--ink);
-  background:linear-gradient(0deg,#fff 0%, #fff 200px), var(--bg-cream)
+  background:linear-gradient(0deg,#fff 0%, #fff 200px), var(--bg-cream);
 }
 
-/* Header */
 .site-header{position:sticky;top:0;z-index:50;background:linear-gradient(180deg,#11d1d6 0%, #06d7d9 100%);border-bottom:4px solid #0f9ea1}
 .header-inner{max-width:var(--maxw);margin:auto;display:flex;align-items:left;justify-content:space-between;padding:10px 20px}
 .brand{display:flex;align-items:left;gap:10px;text-decoration:none}
@@ -24,10 +22,9 @@ body{
 .nav-link.active,.nav-link:hover{color:#000;background:rgba(255,255,255,.25)}
 .header-banner{height:44px;background:
   radial-gradient(16px 16px at 10% 55%, rgba(255,255,255,.25) 40%, transparent 41%) repeat-x,
-  linear-gradient(180deg,transparent 0, transparent 30%, rgba(0,0,0,.05) 31%, transparent 32%)
+  linear-gradient(180deg,transparent 0, transparent 30%, rgba(0,0,0,.05) 31%, transparent 32%);
 }
 
-/* Sections */
 .section{padding:20px 20px}
 .hero{background:var(--bg-cream)}
 .hero-inner{max-width:var(--maxw);margin:auto;text-align:center}
@@ -44,10 +41,9 @@ body{
 
 .section-title{font-weight:900;font-size:32px;color:#111;text-transform:uppercase;font-family:Arial, Helvetica, sans-serif}
 
-/* SEARCH COMPANIES */
 .search-section{background:#e9e2cf;padding:60px 20px;text-align:center;border-top:4px solid #111}
 .search-inner {
-  max-width: 800px; /* Increased for wider cards */
+  max-width: 800px;
   margin: auto;
 }
 .search-title{font-size:26px;font-weight:900;color:#111;margin-bottom:10px;text-transform:uppercase}
@@ -63,7 +59,6 @@ body{
 .section-style:hover{transform:translateY(1px)}
 .section-style:active{transform:translateY(3px)}
 
-/* Metrics (kept in case you add later) */
 .metrics{background:var(--bg-cream-2)}
 .metrics-grid{max-width:var(--maxw);margin:auto;display:grid;gap:22px;grid-template-columns:repeat(3,1fr)}
 .metric-card{background:#fff;border:3px solid #111;padding:22px;text-align:center;box-shadow:0 8px 0 0 #0f3470}
@@ -73,7 +68,6 @@ body{
 .metric-title{margin-top:6px;font-weight:800;letter-spacing:.7px;font-size:13px}
 .metric-sub{margin:6px auto 0;color:#6b6e75;font-size:13px;max-width:320px}
 
-/* Principles */
 .principles{background:#f3eddc}
 .section-head{text-align:center;margin:0 auto 25px}
 .quote-badge{display:inline-flex;align-items:center;justify-content:center;margin-bottom:8px}
@@ -82,21 +76,20 @@ body{
 .quote-card .quote-icon{position:absolute;top:10px;left:10px;background:#ff4b4b;color:#fff;font-size:28px;font-weight:bold;padding:6px 8px;border-radius:2px}
 .quote-text{margin:6px 0 0;font-weight:1000;letter-spacing:.35px;font-size:20px}
 
-/* Features */
 .features{background:var(--bg-cream)}
-.features-grid{max-width:var(--maxw);margin:auto;display:grid;gap: 22px; /* You can adjust this for vertical spacing */
-  grid-template-columns: 1fr; /* Changed to a single column */}
+.features-grid{max-width:var(--maxw);margin:auto;display:grid;gap: 22px;
+  grid-template-columns: 1fr;}
 .feature-card {
   background: #fff;
   border: 3px solid #111;
   padding: 20px;
   box-shadow: 0 8px 0 0 #0b3880;
-  text-align: left; /* This aligns the text inside the card */
-}.feature-icon{width:46px;height:46px;display:flex;align-items:center;justify-content:center;margin-bottom:8px;background:#ffeb7a;border:3px solid #111;box-shadow:0 6px 0 #caa200}
+  text-align: left;
+}
+.feature-icon{width:46px;height:46px;display:flex;align-items:center;justify-content:center;margin-bottom:8px;background:#ffeb7a;border:3px solid #111;box-shadow:0 6px 0 #caa200}
 .feature-title{margin:2px 0 6px;font:900 18px/1.2 Montserrat,Inter,sans-serif}
 .feature-text{color:#6b6e75;font-size:14px}
 
-/* Footer */
 .site-footer{background:#101217;color:#e6e6e6;border-top:6px solid #ffcf00;position:relative;overflow:hidden}
 .site-footer:before{content:"";position:absolute;left:-70px;bottom:34px;width:140px;height:140px;background:#e6d8a8;opacity:.2;transform:rotate(45deg);border-radius:8px}
 .site-footer:after{content:"";position:absolute;right:18px;bottom:16px;width:86px;height:86px;background:#a22;opacity:.25;transform:rotate(45deg);border-radius:8px}
@@ -111,7 +104,6 @@ body{
 .legal a{color:#e6e6e6;text-decoration:none}
 .dot{opacity:.6}
 
-/* Responsive */
 @media (max-width: 1024px){
   .metrics-grid{grid-template-columns:1fr 1fr}
   .quotes-grid{grid-template-columns:1fr 1fr}
@@ -128,9 +120,6 @@ body{
   .cta{width:100%;font-size:13px;padding:12px 18px}
 }
 
-/* --- New and Updated Styles for Detail Page --- */
-
-/* Add a wrapper for the page to give it some breathing room */
 .page-container {
   padding: 2rem;
   background-color: var(--bg-cream);
@@ -138,10 +127,10 @@ body{
 }
 
 .detail-container {
-  max-width: 90vw; /* Use 90% of the viewport width */
-  width: 100%; /* Ensure it takes up the available space */
-  margin: 20px auto; /* Center it horizontally with some top/bottom margin */
-  padding: 30px 40px; /* More padding for a spacious look */
+  max-width: 90vw;
+  width: 100%;
+  margin: 20px auto;
+  padding: 30px 40px;
   background: #fdfbf5;
   border: 4px solid #111;
   box-shadow: 8px 8px 0 #0f3470;
@@ -150,7 +139,7 @@ body{
 
 .company-detail-name {
   font-family: 'Montserrat', sans-serif;
-  font-size: 3rem; /* Larger font size for the company name */
+  font-size: 3rem;
   font-weight: 900;
   color: #111;
   margin-bottom: 1.5rem;
@@ -158,8 +147,8 @@ body{
 }
 
 .company-detail-summary {
-  font-size: 1.25rem; /* Larger font for the summary */
-  color: #333; /* Darker text for better readability */
+  font-size: 1.25rem;
+  color: #333;
   line-height: 1.7;
   margin-bottom: 2rem;
 }
@@ -168,14 +157,14 @@ body{
   font-style: italic;
   color: #888;
   font-size: 1rem;
-  margin-bottom: 2rem; /* Add space between date and link */
+  margin-bottom: 2rem;
 }
 
 .cta-link {
   display: inline-block;
   background: var(--brand-red);
   color: #fff;
-  padding: 14px 28px; /* Slightly larger button */
+  padding: 14px 28px;
   text-decoration: none;
   font-weight: 700;
   border-radius: 8px;
@@ -195,7 +184,7 @@ body{
 }
 
 .back-button {
-  margin-bottom: 2.5rem; /* More space below the back button */
+  margin-bottom: 2.5rem;
   background: var(--muted);
 }
 
@@ -203,23 +192,21 @@ body{
   background: #4a4d53;
 }
 
-/* Add this to remove the underline from the company cards */
 .card-link {
-  text-decoration: none; /* Removes the underline */
-  color: inherit;        /* Ensures the text color inside the card doesn't change */
+  text-decoration: none;
+  color: inherit;
 }
 
-/* --- New Chart Layout Styles --- */
 .chart-row {
   display: flex;
-  flex-wrap: wrap; /* Allows charts to stack on small screens */
+  flex-wrap: wrap;
   gap: 2rem;
   margin-bottom: 2rem;
 }
 
 .chart-block {
-  flex: 1 1 45%; /* Allows two charts to fit side-by-side */
-  min-width: 300px; /* Prevents charts from getting too small */
+  flex: 1 1 45%;
+  min-width: 300px;
   background: #ffffff;
   padding: 1.5rem;
   border: 2px solid #ddd;
@@ -247,14 +234,13 @@ body{
 }
 
 .trend-increase {
-  color: #28a745; /* Green */
+  color: #28a745;
 }
 
 .trend-decrease {
-  color: #dc3545; /* Red */
+  color: #dc3545;
 }
 
-.trend-N\\/A {
-  color: #6c757d; /* Gray */
+.trend-N\/A {
+  color: #6c757d;
 }
-
