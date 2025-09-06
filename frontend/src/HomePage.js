@@ -67,63 +67,95 @@ export default function HomePage() {
       </header>
 
       <main>
-        <section id="home" className="section hero">
-          <div className="hero-inner">
-            <div className="hero-mark"></div>
-            <h1 className="hero-title">
-              <span className="t1">Tracking the Impact of Global</span>
-              <span className="t2">Movements</span>
-              <span className="t3">Through Data</span>
-            </h1>
-            <p className="hero-sub">
-              Visualizing publicly available financial data to explore how events and consumer choices shape companies and markets.
-            </p>
-            <button className="cta" data-scroll="#search-companies">
-              GET STARTED <span className="cta-arrow" aria-hidden="true">→</span>
-            </button>
-          </div>
-        </section>
+  {/* Hero Section */}
+  <section id="home" className="section hero">
+    <div className="hero-inner">
+      <div className="hero-mark"></div>
+      <h1 className="hero-title">
+        <span className="t1">Tracking the Impact of Global</span>
+        <span className="t2">Movements</span>
+        <span className="t3">Through Data</span>
+      </h1>
+      <p className="hero-sub">
+        Visualizing publicly available financial data to explore how events and consumer choices shape companies and markets.
+      </p>
+      <button className="cta" data-scroll="#search-companies">
+        GET STARTED <span className="cta-arrow" aria-hidden="true">→</span>
+      </button>
+    </div>
+  </section>
 
-        <SearchCompanies />
+  {/* 🌟 Moved "Guided by Principles" Section Here */}
+  <section id="principles" className="section principles">
+    <div className="section-head">
+      <h1 className="section-title">GUIDED BY PRINCIPLES</h1>
+      <p className="section-sub">Transparency and awareness through data-driven insights</p>
+    </div>
+    <div className="quotes-grid">
+      <article className="quote-card">
+        <span className="quote-icon">״</span>
+        <p className="quote-text">
+          OUR LIVES BEGIN TO END THE <br />
+          DAY WE BECOME SILENT ABOUT THE THINGS THAT MATTER
+        </p>
+      </article>
+      <article className="quote-card">
+        <span className="quote-icon">״</span>
+        <p className="quote-text">
+          EVERY PURCHASE IS A VOTE FOR THE WORLD YOU WANT TO SEE.
+        </p>
+      </article>
+      <article className="quote-card">
+        <span className="quote-icon">״</span>
+        <p className="quote-text">
+          SMALL CHOICES CAN LEAD TO BIG CHANGE.
+        </p>
+      </article>
+    </div>
+  </section>
 
-        <section id="about" className="section principles">
-          <div className="section-head">
-            <h1 className="section-title">GUIDED BY PRINCIPLES</h1>
-            <p className="section-sub">Transparency and awareness through data-driven insights</p>
-          </div>
-          <div className="quotes-grid">
-            <article className="quote-card"><span className="quote-icon">״</span><p className="quote-text">OUR LIVES BEGIN TO END THE <br/>DAY WE BECOME SILENT ABOUT THE THINGS THAT MATTER</p></article>
-            <article className="quote-card"><span className="quote-icon">״</span><p className="quote-text">EVERY PURCHASE IS A VOTE FOR THE WORLD YOU WANT TO SEE.</p></article>
-            <article className="quote-card"><span className="quote-icon">״</span><p className="quote-text">SMALL CHOICES CAN LEAD TO BIG CHANGE.</p></article>
-          </div>
-        </section>
+  {/* 🔍 Search Companies Section */}
+  <SearchCompanies />
 
-        <section className="section features">
-          <div className="features-grid">
-            <article className="feature-card">
-              <div className="feature-icon">
-                <svg width="32" height="32" viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M12 2l7 3v6c0 5-3.5 9-7 11-3.5-2-7-6-7-11V5l7-3z" fill="#2b6cff"/>
-                  <path d="M12 6v10" stroke="#fff" strokeWidth="2" strokeLinecap="round"/>
-                  <path d="M8.5 10.5h7" stroke="#fff" strokeWidth="2" strokeLinecap="round"/>
-                </svg>
-              </div>
-              <h3 className="feature-title">VERIFIED DATA SOURCES</h3>
-              <p className="feature-text">All data sourced from publicly available financial reports and verified through multiple channels.</p>
-            </article>
-            <article className="feature-card">
-              <div className="feature-icon">
-                <svg width="32" height="32" viewBox="0 0 24 24" aria-hidden="true">
-                  <rect x="3" y="3" width="18" height="18" rx="3" fill="#ffd339"/>
-                  <path d="M6 16l3-3 2 2 4-5 3 4" fill="none" stroke="#111" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-              </div>
-              <h3 className="feature-title">REAL-TIME ANALYSIS</h3>
-              <p className="feature-text">Dynamic visualizations that update with the latest quarterly reports and market trends.</p>
-            </article>
-          </div>
-        </section>
-      </main>
+  {/* Features Section */}
+  <section className="section features">
+    <div className="features-grid">
+      <article className="feature-card">
+        <div className="feature-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 2l7 3v6c0 5-3.5 9-7 11-3.5-2-7-6-7-11V5l7-3z" fill="#2b6cff"/>
+            <path d="M12 6v10" stroke="#fff" strokeWidth="2" strokeLinecap="round"/>
+            <path d="M8.5 10.5h7" stroke="#fff" strokeWidth="2" strokeLinecap="round"/>
+          </svg>
+        </div>
+        <h3 className="feature-title">VERIFIED DATA SOURCES</h3>
+        <p className="feature-text">
+          All data sourced from publicly available financial reports and verified through multiple channels.
+        </p>
+      </article>
+      
+      <article className="feature-card">
+        <div className="feature-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" aria-hidden="true">
+            <rect x="3" y="3" width="18" height="18" rx="3" fill="#ffd339"/>
+            <path
+              d="M6 16l3-3 2 2 4-5 3 4"
+              fill="none"
+              stroke="#111"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+        </div>
+        <h3 className="feature-title">REAL-TIME ANALYSIS</h3>
+        <p className="feature-text">
+          Dynamic visualizations that update with the latest quarterly reports and market trends.
+        </p>
+      </article>
+    </div>
+  </section>
+</main>
 
       <footer id="contact" className="site-footer">
         <div className="footer-inner">
