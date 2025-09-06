@@ -1,19 +1,14 @@
-# Netlify Build Configuration
+# This is the corrected configuration for netlify.toml
 
 [build]
-  # This is the command to build your React frontend
-  command = "npm run build"
+  # Tell Netlify to change to the 'frontend' directory, then run the build.
+  command = "cd frontend && npm run build"
   
   # The folder where your Flask app (Netlify Function) is located
   functions = "api/"
   
   # The folder that contains the built frontend to be published
   publish = "frontend/build"
-
-[dev]
-  # Local development settings (optional)
-  framework = "create-react-app"
-  targetPort = 3000
 
 [[redirects]]
   # This rule proxies all API requests to your Flask function
