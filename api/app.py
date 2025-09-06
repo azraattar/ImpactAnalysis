@@ -24,14 +24,26 @@ def not_found(e):
 def server_error(e):
     return jsonify({"error": "server error"}), 500
 
-BASE_DIR = Path(__file__).resolve().parent
-CSV_PATH = BASE_DIR / "data" / "bds_boycotts.csv"
+# --- REVISED FILE PATH LOGIC ---
+# This approach is more robust for Vercel deployments.
+# It checks for the Vercel environment variable to build the correct path.
+if 'VERCEL' in os.environ:
+    # In Vercel, the current working directory is the root of the project.
+    # Your api folder will be a subdirectory of this.
+    BASE_DIR = Path.cwd() 
+    CSV_PATH = BASE_DIR / "api" / "data" / "bds_boycotts.csv"
+else:
+    # This is for your local development environment
+    BASE_DIR = Path(__file__).resolve().parent
+    CSV_PATH = BASE_DIR / "data" / "bds_boycotts.csv"
 
+# --- The rest of your code remains the same ---
 try:
     df = pd.read_csv(CSV_PATH, encoding='latin1').fillna("")
 except FileNotFoundError:
-    print(f"FATAL ERROR: The file 'bds_boycotts.csv' was not found in the 'data' folder.")
+    print(f"FATAL ERROR: The file was not found at the expected path: {CSV_PATH}")
     df = pd.DataFrame()
+
 
 if not df.empty:
     df.columns = [c.strip() for c in df.columns]
