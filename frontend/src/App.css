@@ -24,7 +24,7 @@ body{
 .nav-link.active,.nav-link:hover{color:#000;background:rgba(255,255,255,.25)}
 .header-banner{height:44px;background:
   radial-gradient(16px 16px at 10% 55%, rgba(255,255,255,.25) 40%, transparent 41%) repeat-x,
-  linear-gradient(180deg,transparent 0, transparent 30%, rgba(0,0,0,.05) 31%, transparent 32%),
+  linear-gradient(180deg,transparent 0, transparent 30%, rgba(0,0,0,.05) 31%, transparent 32%)
 }
 
 /* Sections */

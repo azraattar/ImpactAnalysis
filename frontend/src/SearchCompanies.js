@@ -1,8 +1,8 @@
-// src/components/SearchCompanies.jsx
-import { useEffect, useRef, useState } from "react";
-import { Link } from "react-router-dom"; // Import Link
 
-// ... (useDebouncedCallback function remains the same) ...
+import { useEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom"; 
+
+
 function useDebouncedCallback(cb, delay) {
   const t = useRef();
   return (...args) => {
